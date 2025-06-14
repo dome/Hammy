@@ -11,22 +11,47 @@ import {
 	useReconnect,
 	useSwitchChain,
 } from "wagmi";
-import { mainnet, xrplevmTestnet } from "wagmi/chains";
+import { mainnet } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
 import { http } from "viem";
 import { TokenListProvider } from "@/providers/token-list-provider";
 import { useEffect } from "react";
+import { defineChain } from 'viem';
 
+const bctChain = defineChain({
+  id: 1190,
+  name: 'bctChain',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Test Custom Coin',
+    symbol: 'BCT',
+  },
+  rpcUrls: {
+    default: {
+      http: ['https://rpc.bctchain.com'],
+    },
+    public: {
+      http: ['https://rpc.bctchain.com'],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: 'My Custom Testnet Explorer',
+      url: 'https://scan.bctchain.com',
+    },
+  },
+  testnet: false,
+});
 const queryClient = new QueryClient();
 const connectKitConfig = getDefaultConfig({
 	appName: "Hammy Swap",
 	walletConnectProjectId:
 		process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "demo",
-	chains: [xrplevmTestnet, mainnet],
+	chains: [mainnet, bctChain],
 	transports: {
-		[xrplevmTestnet.id]: http(),
+		[bctChain.id]: http(),
 	},
 	ssr: true,
 });
@@ -187,7 +212,7 @@ function ChainSwitcher() {
 		if (chain?.id === mainnet.id) {
 			const timeout = setTimeout(() => {
 				switchChain({
-					chainId: xrplevmTestnet.id,
+					chainId: bctChain.id,
 				});
 				allChains;
 			}, 1000);

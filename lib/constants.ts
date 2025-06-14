@@ -7,7 +7,7 @@ export const UNISWAP_V2_ROUTER = env.NEXT_PUBLIC_UNISWAP_V2_ROUTER as Address;
 export const WETH_ADDRESS = env.NEXT_PUBLIC_WETH_ADDRESS as Address;
 
 // Token addresses for price calculations
-export const USDC_ADDRESS = "0x925965a6FCe11D0589dAD8972e7e5B8879bCb9ef" as Address;
+export const USDC_ADDRESS = "0x49be54686D911D454bB0887FdE424e3C617dA683" as Address;
 
 // ABIs
 export const UNISWAP_V2_ROUTER_ABI = [

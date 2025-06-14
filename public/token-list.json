@@ -11,10 +11,10 @@
 	"keywords": ["uniswap", "default"],
 	"tokens": [
 		{
-			"chainId": 1449000,
-			"address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-			"name": "XRP",
-			"symbol": "XRP",
+			"chainId": 1190,
+			"address": "0xa74d1fcc64cD9F701B42224A22778B1dCc447FCE",
+			"name": "BCT",
+			"symbol": "BCT",
 			"logoURI": "https://assets.coingecko.com/coins/images/44/standard/xrp-symbol-white-128.png",
 			"decimals": 18
 		},
@@ -27,10 +27,10 @@
 			"decimals": 18
 		},
 		{
-			"chainId": 1449000,
-			"address": "0x925965a6FCe11D0589dAD8972e7e5B8879bCb9ef",
-			"name": "USD Coin",
-			"symbol": "USDC",
+			"chainId": 1190,
+			"address": "0x49be54686D911D454bB0887FdE424e3C617dA683",
+			"name": "USD DOG",
+			"symbol": "USDG",
 			"logoURI": "https://assets.coingecko.com/coins/images/6319/standard/usdc.png",
 			"decimals": 18
 		},
